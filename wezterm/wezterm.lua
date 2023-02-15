@@ -5,7 +5,11 @@ return {
     color_scheme = "Dracula",
     default_prog = gitbash,
     window_close_confirmation = "NeverPrompt",
+    skip_close_confirmation_for_processes_named = { 'bash.exe', 'powershell.exe', 'cmd.exe', 'pwsh.exe'},
     window_decorations = "RESIZE",
+    hide_tab_bar_if_only_one_tab = true,
+    inital_cols = 240,
+    inital_rows = 100,
     keys = {
         {
             key = "p",
@@ -16,7 +20,7 @@ return {
             key = "Y",
             mods = "CTRL",
             action = "Copy",
-        },       
+        },
         {
             key = "C",
             mods = "CTRL",
@@ -32,6 +36,11 @@ return {
             mods = "ALT",
             action = "DisableDefaultAssignment",
         },
+	{
+	  key = 'w',
+	  mods = 'CTRL|SHIFT',
+	  action = wezterm.action.CloseCurrentTab { confirm = false }
+	},
     },
 
     font_dirs = {"C:\\Windows\\Fonts"},
