@@ -4,10 +4,15 @@ local gitbash = {"C:\\Program Files\\Git\\bin\\bash.exe", "-i", "-l"}
 return {
     color_scheme = "Dracula",
     default_prog = gitbash,
+    default_cursor_style = 'SteadyBar',
+    cursor_thickness = 2.0,
     window_close_confirmation = "NeverPrompt",
     skip_close_confirmation_for_processes_named = { 'bash.exe', 'powershell.exe', 'cmd.exe', 'pwsh.exe'},
     window_decorations = "RESIZE",
     hide_tab_bar_if_only_one_tab = true,
+    check_for_updates = true,
+    check_for_updates_interval_seconds = 86400,
+    show_update_window = true,
     inital_cols = 240,
     inital_rows = 100,
     keys = {
