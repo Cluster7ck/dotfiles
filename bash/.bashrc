@@ -26,18 +26,13 @@ unset env
 #so as not to be disturbed by Ctrl-S Ctrl-Q in terminals:
 stty -ixon
 
-alias evr='cd /d/Projekte/ergo-vr-app'
-alias bplan='cd ~/Documents/Projekte/boxplanx/'
-alias bboard='cd ~/Documents/Projekte/build-board/backend'
 alias proj='cd ~/Documents/Projekte'
-alias hr='cd ~/Documents/Projekte/halorepo'
 alias cd..='cd ..'
 alias cd...='cd ../..'
 alias cd....='cd ../../..'
 alias cd.....='cd ../../../..'
 IFS=$'\r'"$IFS"
 alias rg="rg --hidden -g '!.git'"
-alias pdata="cd $ProgramData/Halocline/Layout && explorer ."
 alias docker-nuke='docker stop $(docker ps -a -q) && docker rm $(docker ps -a -q)'
 alias vim='nvim'
 alias nv='nvim'
@@ -70,10 +65,6 @@ sync-branch() {
     local bn=$(git rev-parse --symbolic-full-name --abbrev-ref HEAD)
     git reset --hard origin/$bn
 }
-
-#upm aliases
-alias upm_login='npm login --registry http://packages.halocline.io:4873/'
-alias upm_publish='npm publish --registry http://packages.halocline.io:4873/'
 
 removeBranchesWithPrefix() {
   git for-each-ref --format="%(refname:short)" refs/heads/$1 | xargs git branch -d
