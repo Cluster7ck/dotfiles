@@ -1,10 +1,15 @@
 local telescope = require('telescope')
 local telescope_builtin = require('telescope.builtin')
 local telescope_actions = require 'telescope.actions'
+local trouble = require("trouble.providers.telescope")
 local M = {}
 
 telescope.setup {
   defaults = {
+    mappings = {
+      i = { ["<c-t>"] = trouble.open_with_trouble },
+      n = { ["<c-t>"] = trouble.open_with_trouble },
+    },
     prompt_position = 'top',
     layout_strategy = 'horizontal',
     use_less = false

@@ -22,6 +22,8 @@ return require('packer').startup(function(use)
         end
     }
 
+    use('lewis6991/gitsigns.nvim')
+
     use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
 
     use('mbbill/undotree')
@@ -56,7 +58,7 @@ return require('packer').startup(function(use)
     use('phaazon/hop.nvim')
 
     use('nvim-tree/nvim-web-devicons')
-    use('feline-nvim/feline.nvim')
+    use('freddiehaddad/feline.nvim')
     use('tpope/vim-commentary')
 
     -- https://github.com/folke/which-key.nvim
@@ -70,8 +72,12 @@ return require('packer').startup(function(use)
             }
         end
     }
-
+    use {
+        'folke/trouble.nvim',
+        requires = { { "nvim-tree/nvim-web-devicons" } },
+    }
     use('jiangmiao/auto-pairs')
+
 
     use 'lukas-reineke/indent-blankline.nvim'
 end)

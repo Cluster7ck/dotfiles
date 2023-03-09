@@ -50,6 +50,7 @@ local c = {
 	},
 	gitBranch = {
 		provider = "git_branch",
+        icon = '',
 		hl = {
 			fg = "peanut",
 			bg = "darkblue",

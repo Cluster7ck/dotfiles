@@ -40,6 +40,7 @@ alias pwsh='powershell'
 alias ebash='nvim ~/.config/bash/.bashrc'
 alias envim='cd ~/.config/nvim && nvim .'
 alias sb='hr && cd shibu/shibu_rs && nv .'
+alias et='et --ignore-git -I -l 2'
 
 #git aliases
 alias gs='git status'
