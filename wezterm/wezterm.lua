@@ -18,7 +18,7 @@ return {
     keys = {
         {
             key = "p",
-	    mods="CTRL",
+            mods="CTRL",
             action = "ShowLauncher",
         },
         {
@@ -40,6 +40,26 @@ return {
             key = "9",
             mods = "ALT",
             action = "DisableDefaultAssignment",
+        },
+        {
+            key = "LeftArrow",
+            mods = "CTRL|ALT",
+            action = wezterm.action.ActivatePaneDirection("Left"),
+        },
+        {
+            key = "RightArrow",
+            mods = "CTRL|ALT",
+            action = wezterm.action.ActivatePaneDirection("Right"),
+        },
+        {
+            key = "UpArrow",
+            mods = "CTRL|ALT",
+            action = wezterm.action.ActivatePaneDirection("Up"),
+        },
+        {
+            key = "DownArrow",
+            mods = "CTRL|ALT",
+            action = wezterm.action.ActivatePaneDirection("Down"),
         },
 	{
 	  key = 'w',

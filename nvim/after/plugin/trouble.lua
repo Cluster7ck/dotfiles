@@ -2,8 +2,8 @@ local trouble = require("trouble")
 
 trouble.setup {
     mode = "document_diagnostics",
-    auto_open = true,
     auto_close = true,
+    auto_open = false,
     auto_jump = {"document_diagnostics", "lsp_definitions"}
 }
 
