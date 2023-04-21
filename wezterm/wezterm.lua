@@ -2,7 +2,8 @@ local wezterm = require "wezterm"
 local gitbash = {"C:\\Program Files\\Git\\bin\\bash.exe", "-i", "-l"}
 
 return {
-    color_scheme = "Dracula",
+    color_scheme = "kanagawabones",
+	force_reverse_video_cursor = true,
     default_prog = gitbash,
     default_cursor_style = 'SteadyBar',
     cursor_thickness = 2.0,
@@ -13,20 +14,13 @@ return {
     check_for_updates = true,
     check_for_updates_interval_seconds = 86400,
     show_update_window = true,
-    inital_cols = 240,
-    inital_rows = 100,
     keys = {
         {
             key = "p",
             mods="CTRL",
             action = "ShowLauncher",
         },
-        {
-            key = "Y",
-            mods = "CTRL",
-            action = "Copy",
-        },
-        {
+	{
             key = "C",
             mods = "CTRL",
             action = "DisableDefaultAssignment",
@@ -73,22 +67,18 @@ return {
     font_rules = {
         {
             italic = false,
-            bold = false,
             font = wezterm.font("Fira Code"),
         },
         {
             italic = true,
-            bold = false,
             font = wezterm.font("Fira Code"),
         },
         {
             italic = false,
-            bold = true,
             font = wezterm.font("Fira Code Bold"),
         },
         {
             italic = true,
-            bold = true,
             font = wezterm.font("Fira Code Bold"),
         },
     },

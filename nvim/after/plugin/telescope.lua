@@ -24,7 +24,9 @@ M.find_files = function()
 end
 
 vim.keymap.set('n', '<leader>pf', M.find_files, {})
-vim.keymap.set('n', '<C-p>', telescope_builtin.git_files, {})
+vim.keymap.set('n', '<leader>W', telescope_builtin.current_buffer_fuzzy_find, {})
+vim.keymap.set('n', '<leader>w', telescope_builtin.buffers, {})
+vim.keymap.set('n', '<leader>rg', telescope_builtin.lsp_references, {})
 vim.keymap.set('n', '<leader>ps', function()
 	telescope_builtin.grep_string({ search = vim.fn.input("Grep > ") })
 end)
