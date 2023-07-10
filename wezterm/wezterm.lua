@@ -20,7 +20,12 @@ return {
             mods="CTRL",
             action = "ShowLauncher",
         },
-	{
+        {
+            key = "Y",
+            mods = "CTRL",
+            action = wezterm.action.CopyTo 'ClipboardAndPrimarySelection',
+        },
+        {
             key = "C",
             mods = "CTRL",
             action = "DisableDefaultAssignment",
@@ -67,18 +72,22 @@ return {
     font_rules = {
         {
             italic = false,
+            intensity = "Half",
             font = wezterm.font("Fira Code"),
         },
         {
             italic = true,
+            intensity = "Normal",
             font = wezterm.font("Fira Code"),
         },
         {
             italic = false,
+            intensity = "Bold",
             font = wezterm.font("Fira Code Bold"),
         },
         {
             italic = true,
+            intensity = "Bold",
             font = wezterm.font("Fira Code Bold"),
         },
     },
