@@ -9,7 +9,7 @@ return {
     cursor_thickness = 2.0,
     window_close_confirmation = "NeverPrompt",
     skip_close_confirmation_for_processes_named = { 'bash.exe', 'powershell.exe', 'cmd.exe', 'pwsh.exe'},
-    -- window_decorations = "RESIZE",
+    window_decorations = "RESIZE",
     hide_tab_bar_if_only_one_tab = true,
     check_for_updates = true,
     check_for_updates_interval_seconds = 86400,
