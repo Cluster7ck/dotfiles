@@ -70,18 +70,42 @@ sync-branch() {
 removeBranchesWithPrefix() {
   git for-each-ref --format="%(refname:short)" refs/heads/$1 | xargs git branch -d
 }
-#function _update_ps1() {
-#    PS1=$(powerline-shell $?)
-#}
-#
-#if [[ $TERM != linux && ! $PROMPT_COMMAND =~ _update_ps1 ]]; then
-#    PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
-#fi
+
+test-tool() {
+    if [ -z "$1" ]; then
+        echo "Please provide a command to test"
+        return 1
+    fi
+
+    local tool="$1"
+
+    # Run the tool with the --help option and discard the output
+    # If the tool does not exist or execution fails, it will set a non-zero status code
+    $tool --help &> /dev/null
+
+    # Check the status of the last command
+    if [ $? -eq 0 ]; then
+        # Command succeeded, print a success message in green
+        printf "\e[32m%s ✔\n\e[0m" "$tool"
+    else
+        # Command failed, print a failure message in red
+        printf "\e[31m%s ❌\n\e[0m" "$tool"
+    fi
+}
+
+test-tools() {
+	test-tool rg
+	test-tool bat
+	test-tool fd
+	test-tool et
+	test-tool docker
+}
 
 diff-lines() {
     local path=
     local line=
-    while read; do
+    while read;
+    do
         esc=$'\033'
         if [[ $REPLY =~ ---\ (a/)?.* ]]; then
             continue
@@ -123,3 +147,4 @@ function parse_git_branch {
 }
 
 export PS1="\[\033[32m\]\w\[\033[33m\]\$(GIT_PS1_SHOWUNTRACKEDFILES=1 GIT_PS1_SHOWDIRTYSTATE=1 __git_ps1)\[\033[00m\] \012$ "
+export CARGO_REGISTRIES_CRATES_IO_PROTOCOL=sparse
