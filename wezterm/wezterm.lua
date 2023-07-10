@@ -13,8 +13,6 @@ return {
     check_for_updates = true,
     check_for_updates_interval_seconds = 86400,
     show_update_window = true,
-    inital_cols = 240,
-    inital_rows = 100,
     keys = {
         {
             key = "p",
@@ -24,7 +22,7 @@ return {
         {
             key = "Y",
             mods = "CTRL",
-            action = "Copy",
+            action = wezterm.action.CopyTo 'ClipboardAndPrimarySelection',
         },
         {
             key = "C",
@@ -73,22 +71,22 @@ return {
     font_rules = {
         {
             italic = false,
-            bold = false,
+            intensity = "Half",
             font = wezterm.font("Fira Code"),
         },
         {
             italic = true,
-            bold = false,
+            intensity = "Normal",
             font = wezterm.font("Fira Code"),
         },
         {
             italic = false,
-            bold = true,
+            intensity = "Bold",
             font = wezterm.font("Fira Code Bold"),
         },
         {
             italic = true,
-            bold = true,
+            intensity = "Bold",
             font = wezterm.font("Fira Code Bold"),
         },
     },
